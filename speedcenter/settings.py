@@ -119,6 +119,7 @@ INSTALLED_APPS = (
     'codespeed',
     'south',
     'tastypie',
+    'gunicorn',
 )
 SOUTH_TESTS_MIGRATE = False
 
