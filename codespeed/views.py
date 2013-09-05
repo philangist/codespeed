@@ -843,7 +843,6 @@ def validate_result(item):
         'environment',
         'result_value',
     ]
-
     response = {}
     error = True
     for key in mandatory_data:
@@ -883,6 +882,10 @@ def create_report_if_enough_data(rev, exe, e):
 
 
 def save_result(data):
+    try:
+        data = json.loads(data.keys()[0])
+    except:
+        pass
     res, error = validate_result(data)
     if error:
         return res, True
